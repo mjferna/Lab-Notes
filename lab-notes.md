@@ -20,55 +20,58 @@ CTRL Z = stops the current command (resume with fg in foreground or bg in backgr
 
 **Basic Terminal Navigation**
 
-cp image.jpg <folderName>/ = copy to folder
-cp image.jpg folder/sameImageNewName.jpg
-ls -a = list all files and folders cp -R stuff otherStuff = copy and rename a folder
-ls <folderName> = list files in folder cp *.txt stuff/ = copy all of *<file type> to folder
-ls -lh = Detailed list, Human readable
-ls -l *.jpg = list jpeg files only mv file.txt Documents/ = move file to a folder
-ls -lh <fileName> = Result for file only mv <folderName> <folderName2> = move folder in folder
-mv filename.txt filename2.txt = rename file
-cd <folderName> = change directory mv <fileName> stuff/newfileName
-if folder name has spaces use “ “ mv <folderName>/ .. = move folder up in hierarchy
-cd / = go to root
-cd .. = go up one folder, tip: ../../../ rm <fileName> .. = delete file (s)
-rm -i <fileName> .. = ask for confirmation each file
-du -h: Disk usage of folders, human readable rm -f <fileName> = force deletion of a file
-du -ah: “ “ “ files & folders, Human readable rm -r <foldername>/ = delete folder
-du -sh: only show disc usage of folders
-touch <fileName> = create or update a file
-pwd = print working directory
-ln file1 file2
+Commands for moving around the filesystem include the following.
 
-**Researching Files Extract, sort and filter data**
+- pwd: The pwd command allows you to know the directory in which you're located (pwd stands for "print working directory"). For example, pwd in the desktop directory will show ~/Desktop. Note that the GNOME terminal also displays this information in the title bar of its window.
+- cd: The cd command allows you to change directories. When you open a terminal, you will be in your home directory. To move around the filesystem, use cd.
+- To navigate to your desktop directory, use cd ~/Desktop
+- To navigate into the root directory, use cd /
+- To navigate to your home directory, use cd
+- To navigate up one directory level, use cd ..
+- To navigate to the previous directory (or back), use cd -
+- To navigate through multiple levels of directories at once, use cd /var/www, for example, which will take you directly to the /www subdirectory of /var.
 
-grep <someText> <fileName> = search for text in file
-  -i = Doesn't consider uppercase words
-locate <text> = search the content of all the files -I = exclude binary files
-locate <fileName> = search for a file grep -r <text> <folderName>/ = search for file names
-sudo updatedb = update database of files with occurrence of the text
-find = the best file search tool (fast) With regular expressions:
-find -name “<fileName>”
-find -name “text” = search for files who start with the word text grep -E ^<text> <fileName> = search start of lines
-find -name “*text” = “ “ “ “ end “ “ “ “ with the word text
-grep -E <0-4> <fileName> =shows lines containing numbers 0-4
-grep -E <a-zA-Z> <fileName> = retrieve all lines
-with alphabetical letters
-Search from file Size (in ~)
-find ~ -size +10M = search files bigger than.. (M,K,G) sort = sort the content of files
-sort <fileName> = sort alphabetically
-Search from last access sort -o <file> <outputFile> = write result to a file
-find -name “<filetype>” -atime -5 sort -r <fileName> = sort in reverse
-('-' = less than, '+' = more than and nothing = exactly) sort -R <fileName> = sort randomly
-sort -n <fileName> = sort numbers
-Search only files or directory’s
-find -type d --> ex: find /var/log -name "syslog" -type d wc = word count
-find -type f = files wc <fileName> = nbr of line, nbr of words, byte size
--l (lines), -w (words), -c (byte size), -m
-More info: man find, man locate (number of characters)
-cut = cut a part of a file
--c --> ex: cut -c 2-5 names.txt
-(cut the characters 2 to 5 of each line)
--d (delimiter) (-d & -f good for .csv files)
--f (# of field to cut)
-more info: man cut, man sort, man grep
+**Manipulating Files and Folders**
+
+You can manipulate files and folders by using the following commands.
+
+- cp: The cp command makes a copy of a file for you. For example, cp file foo makes an exact copy of the file whose name you entered and names the copy foo, but the first file will still exist with its original name. After you use mv, the original file no longer exists, but after you use cp, that file stays and a new copy is made.
+- mv: The mv command moves a file to a different location or renames a file. Examples are as follows: mv file foo renames the original file to foo. mv foo ~/Desktop moves the file foo to your desktop directory but does not rename it. You must specify a new filename to rename a file.
+To save on typing, you can substitute ~ in place of the home directory. Note: If you are using mv with sudo, you will not be able to use the ~ shortcut. Instead, you will have to use the full pathnames to your files.
+- rm: Use this command to remove or delete a file in your directory. It does not work on directories that contain files.
+- ls: The ls command shows you the files in your current directory. Used with certain options, it lets you see file sizes, when files where created, and file permissions. For example, ls ~ shows you the files that are in your home directory.
+- mkdir: The mkdir command allows you to create directories. For example, mkdir music creates a music directory.
+
+**Pandoc**
+pandoc -o output.html input.txt
+pandoc test.txt -o test.pdf
+pandoc -f html -t markdown http://www.fsf.org
+pandoc -o hello.tex hello.txt
+
+**Grep**
+- egrep or grep -E
+- Run grep with extended regular expressions.
+-i
+Ignore case (ie uppercase, lowercase letters).
+- -v
+Return all lines which don't match the pattern.
+- -w
+Select only matches that form whole words.
+- -c
+Print a count of matching lines.
+- Can be combined with the -v option to print a count of non matchine lines.
+- -l
+Print the name of each file which contains a match.
+Normally used when grep is invoked with wildcards for the file argument.
+- -n
+Print the line number before each line that matches.
+- -r
+Recursive, read all files in given directory and subdirectories.
+
+**Git**
+
+- git init
+- git add
+- git push
+- git commit
+- git origin -u committ
