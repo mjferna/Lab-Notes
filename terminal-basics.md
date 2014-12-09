@@ -37,6 +37,11 @@ man = see manual
 
 history = lists prior commands
 
+wget: non-interactive download of files from the Web
+
+head: used to show the beginning of a text file. 
+
+tail: used to show the end of a text file.
 
 **Download Linux on a Chromebook**
 See:
