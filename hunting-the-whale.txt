@@ -1,0 +1,77 @@
+#**Hunting the Whale**
+
+###*Matt Fernandez*
+
+##Pseudo-code
+
+###0. Create a project directory
+
+mkdir Analysis
+
+cd Analysis
+
+###1. Grab the text of the novel.
+
+wget http://www.gutenberg.org/files/2701/old/moby10b.txt
+
+
+###2. Make two lists
+
+echo "cow" >> animal.txt
+
+echo "horse" >> animal.txt
+
+echo "bison" >> animal.txt
+
+echo "engineering" >> human.txt
+
+echo "heathen" >> human.txt
+
+echo "Broadway" >> human.txt
+
+
+###3.Find all those words in the text, grab context, and save to file.
+
+grep -w --file=animal.txt moby10b.txt >> animal-words.txt
+
+grep -w --file=human.txt moby10b.txt >> human-words.txt
+
+###4. Tokenize!
+
+sed 's/\s/\n/g' moby10b.txt >> token-moby.txt
+
+sed 's/\s/\n/g' animal-words.txt >> token-animal.txt
+
+sed 's/\s/\n/g' human-words.txt >> token-human.txt
+
+cat token-animal.txt | tr -d '[:punct:]' >> token-animal-removed.txt
+
+cat token-human.txt | tr -d '[:punct:]' >> token-human-removed.txt
+
+###5.
+
+####To get a list of human words that are not in the animal words list:
+
+grep -Fxv -f token-animal-removed.txt token-human-removed.txt >> human-not-animal.txt
+
+####To get a list of animal words that are not in the human words list:
+
+grep -Fxv -f token-human-removed.txt token-animal-removed.txt >> animal-not-human.txt
+
+####To determine the intersection of these two files:
+
+grep -Fx -f token-animal-removed.txt token-human-removed.txt >> human-and-animal.txt
+
+##Code
+
+cd ..
+
+cp mobydick.sh mobydick.md
+
+pandoc markdown.md -o markdown.pdf
+
+clear
+
+echo Done!
+
+echo To view, open Analysis folder.
