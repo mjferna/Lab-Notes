@@ -31,6 +31,14 @@ grep -i "boo" /etc/passwd
 Use grep to search 2 different words
 egrep -w 'word1|word2' /path/to/file
 
+v Return all lines which don't match the pattern.
+-w Select only matches that form whole words.
+-c Print a count of matching lines.
+Can be combined with the -v option to print a count of non matchine lines.
+-l Print the name of each file which contains a match. Normally used when grep is invoked with wildcards for the file argument.
+-n Print the line number before each line that matches.
+-r Recursive, read all files in given directory and subdirectories.\
+
 **sed**
 
 automatically 
