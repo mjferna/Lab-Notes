@@ -1,0 +1,27 @@
+1. mkdir Weasel
+
+2. pandoc oral-history.docx oral-history.txt
+
+3. pandoc wwii-extra.docx wwii-extra.txt
+
+4. pandoc columbia-essay.docx columbia.txt
+
+5. nano weasel-replace-script.txt
+
+s/very/ /g
+
+s/extremly/ /g
+
+s/clearly/ /g
+
+6. sed -f weasel-replace-script.txt wwii-extra.txt >> final-wwii.txt
+
+7. sed -f weasel-replace-script.txt oral-history.txt >> final-oral.txt
+
+8. sed -f weasel-replace-script.txt columbia.txt >> final-columbia.txt
+
+9. diff final-columbia.txt columbia.txt
+
+10. diff final-wwii.txt wwii-extra.txt
+
+11. diff oral-history.txt final-oral.txt
