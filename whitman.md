@@ -1,5 +1,4 @@
 EL POETA WALT WHITMAN
-====
 
 José Martí
 
@@ -87,7 +86,7 @@ de fuego las crestas de las olas; despertando en las selvas fecundas de la orill
 los nidos. Vuela el polen; los picos cambian besos; se aparejan las ramas; buscan el Sol las hojas,
 exhala todo música; con ese lenguaje de luz ruda habló Whitman de Lincoln.
 
-### Canto a Lincoln
+Canto a Lincoln
 
 Acaso una de las producciones más bellas de la poesía contemporánea es la mítica trenodia que
 Whitman compuso a la muerte de Lincoln. La Naturaleza entera acompaña en su viaje a la
@@ -114,7 +113,7 @@ luz y el beso; ¡en la sombra que esplende en paz como una bóveda maciza de est
 con música suavísima, por sobre los mundos dormidos como canes a sus pies, un apacible y
 enorme árbol de lilas!
 
-### La poesía es indispensable a los pueblos
+La poesía es indispensable a los pueblos
 
 Cada estado social trae su expresión a la literatura, de tal modo, que por las diversas fases de ella
 pudiera contarse la historia de los pueblos, con más verdad que por sus cronicones y sus décadas.
@@ -163,7 +162,7 @@ en la oscuridad, que aquello es el mundo; la libertad pone alas a la ostra. Y lo
 interior de la concha, parecía portentosa contienda, resulta a la luz del aire ser el natural
 movimiento de la savia en el pulso enérgico del mundo.
 
-### El universo de Whitman
+El universo de Whitman
 
 El mundo, para Walt Whitman, fue siempre como es hoy. Basta con que una cosa sea para que
 haya debido ser, y cuando ya no deba ser, no será. Lo que ya no es, lo que no se ve, se prueba por
@@ -291,7 +290,7 @@ dulce, como mi sangre. Sea universal el goce. Yo canto la eternidad de la existe
 nuestra vida y la hermosura implacable del Universo. Yo uso zapato de becerro, un cuello
 espacioso y un bastón hecho de una rama de árbol!”
 
-### Poesía de la nueva humanidad
+Poesía de la nueva humanidad
 
 Y todo eso lo dice en frase apocalíptica. ¿Rimas o acentos? ¡Oh, no! su ritmo está en las estrofas,
 ligadas, en medio de aquel caos aparente de frases superpuestas y convulsas, por una sabia
